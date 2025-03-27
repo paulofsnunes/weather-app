@@ -1,0 +1,91 @@
+<!-- Container principal - só renderiza se weatherData existir -->
+<div *ngIf="weatherData" class="weather-card">
+  
+  <!-- Cabeçalho com informações de localização -->
+  <div class="weather-header">
+    <!-- Nome da cidade e região -->
+    <h2>
+      {{ weatherData.location.name }}, {{ weatherData.location.region }}
+    </h2>
+    
+    <!-- País e horário local -->
+    <p class="weather-subtitle">
+      {{ weatherData.location.country }} • {{ weatherData.location.localtime }}
+    </p>
+  </div>
+
+  <!-- Divisor visual -->
+  <div class="divider"></div>
+
+  <!-- Conteúdo principal -->
+  <div class="weather-content">
+    
+    <!-- Seção de temperatura -->
+    <div class="weather-main">
+      <div class="temperature-section">
+        
+        <!-- Container do ícone do clima (com fallback) -->
+        <div *ngIf="weatherData?.current?.condition" class="weather-icon-container">
+          
+          <!-- Imagem do ícone climático -->
+          <img [src]="getWeatherIcon()" 
+               (load)="onImageLoad()"
+               (error)="onImageError($event)"
+               alt="{{ weatherData.current.condition.text }}"
+               class="weather-icon">
+          
+          <!-- Fallback textual caso a imagem não carregue -->
+          <div class="weather-icon-fallback" *ngIf="imageError">
+            {{ weatherData.current.condition.text }} <!-- Mostra descrição textual -->
+          </div>
+        </div>
+        
+        <!-- Valor da temperatura -->
+        <span class="temperature">{{ weatherData.current.temp_c }}°C</span>
+      </div>
+      
+      <!-- Descrição textual da condição climática -->
+      <div class="condition">{{ weatherData.current.condition.text }}</div>
+    </div>
+
+    <!-- Divisor visual -->
+    <div class="divider"></div>
+
+    <!-- Detalhes meteorológicos -->
+    <div class="weather-details">
+      
+      <!-- Sensação térmica -->
+      <div class="detail-item">
+        <span class="detail-label">Sensação Térmica:</span>
+        <span class="detail-value">{{ weatherData.current.feelslike_c }}°C</span>
+      </div>
+      
+      <!-- Umidade -->
+      <div class="detail-item">
+        <span class="detail-label">Umidade:</span>
+        <span class="detail-value">{{ weatherData.current.humidity }}%</span>
+      </div>
+      
+      <!-- Vento (com direção) -->
+      <div class="detail-item">
+        <span class="detail-label">Vento:</span>
+        <span class="detail-value">
+          {{ weatherData.current.wind_kph }} km/h 
+          {{ getWindDirection(weatherData.current.wind_degree) }} <!-- Mostra direção -->
+        </span>
+      </div>
+      
+      <!-- Visibilidade -->
+      <div class="detail-item">
+        <span class="detail-label">Visibilidade:</span>
+        <span class="detail-value">{{ weatherData.current.vis_km }} km</span>
+      </div>
+      
+      <!-- Pressão atmosférica -->
+      <div class="detail-item">
+        <span class="detail-label">Pressão:</span>
+        <span class="detail-value">{{ weatherData.current.pressure_mb }} mb</span>
+      </div>
+    </div>
+  </div>
+</div>

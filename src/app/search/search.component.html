@@ -1,0 +1,36 @@
+<!-- Container principal do campo de busca -->
+<div class="search-container">
+  
+  <!-- Input para digitar a cidade -->
+  <input 
+    type="text"
+    [(ngModel)]="city"
+    (input)="onInputChange($event)"
+    (keyup.enter)="onSearch()"
+    placeholder="Digite uma cidade..."
+    class="search-input"
+  >
+  
+  <!-- Botão de ação -->
+  <button 
+    (click)="onSearch()"
+    class="search-button"
+  >
+    Buscar  <!-- Texto do botão -->
+  </button>
+  
+  <!-- Container das sugestões (aparece apenas se houver sugestões) -->
+  <div 
+    class="suggestions-container" 
+    *ngIf="suggestions.length > 0"
+  >
+    <!-- Loop pelas sugestões -->
+    <div 
+      *ngFor="let suggestion of suggestions"
+      class="suggestion-item"
+      (click)="selectSuggestion(suggestion)"
+    >
+      {{ suggestion.display_name }}
+    </div>
+  </div>
+</div>

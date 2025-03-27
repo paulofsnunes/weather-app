@@ -1,3 +1,5 @@
+// environment.prod.ts (produção)
 export const environment = {
-  production: true
+  production: true,
+  weatherApiKey: process.env['WEATHER_API_KEY'] || ''
 };

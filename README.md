@@ -1,27 +1,45 @@
-# WeatherApp
+# 🌤️ Weather App - Angular
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.13.
+Aplicação de previsão do tempo desenvolvida com Angular 14 e Node.js 16.10.0, consumindo a API WeatherAPI.com.
 
-## Development server
+## 🚀 Pré-requisitos
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- Node.js 16.10.0
+- Angular CLI 14.x
+- Conta na [WeatherAPI](https://www.weatherapi.com/) (para chave de API)
 
-## Code scaffolding
+## 🛠️ Configuração do Ambiente
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+1. **Instale o Node.js 16.10.0**:
 
-## Build
+  nvm install 16.10.0
+  nvm use 16.10.0
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+2. **Instale o Angular CLI**:
 
-## Running unit tests
+  npm install -g @angular/cli@14
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+3. **Clone o repositório**:
 
-## Running end-to-end tests
+  git clone https://github.com/seu-usuario/weather-app.git
+  cd weather-app
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+4. **Instale as dependências**:
 
-## Further help
+  npm install
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+5. **Configure as variáveis de ambiente**:
+**Crie src/environments/environment.ts com:**
+
+export const environment = {
+  production: false,
+  weatherApiKey: 'sua_chave_dev_aqui'
+};
+
+6. **🔥 Executando Localmente**:
+
+ng serve --open
+
+7. **📦 Build para Produção**:
+
+ng build --configuration production
