@@ -24,6 +24,7 @@ Aplicação de previsão do tempo desenvolvida com Angular 14 e Node.js 16.10.0,
 3. **Clone o repositório**:
 
   git clone [https://github.com/seu-usuario/weather-app.git](https://github.com/paulofsnunes/weather-app)
+  
   cd weather-app
 
 4. **Instale as dependências**:
