@@ -5,7 +5,8 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
-    "build:vercel": "ng build --configuration=production",
+    "vercel:build": "ng build --configuration=production --replace-weather-key",
+    "postinstall": "node replace-env.js",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },

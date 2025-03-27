@@ -1,13 +1,8 @@
 {
   "version": 2,
-  "builds": [
-    {
-      "src": "angular.json",
-      "use": "@vercel/angular",
-      "config": {
-        "buildCommand": "npm run build:vercel"
-      }
-    }
-  ],
-  "rewrites": [{ "source": "**", "destination": "/index.html" }]
+  "buildCommand": "npm run vercel:build",
+  "installCommand": "npm install",
+  "env": {
+    "WEATHER_API_KEY": "@weather_api_key"
+  }
 }
