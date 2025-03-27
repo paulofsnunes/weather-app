@@ -2,6 +2,8 @@
 
 Aplicação de previsão do tempo desenvolvida com Angular 14 e Node.js 16.10.0, consumindo as API's WeatherAPI.com e LocationIQ.
 
+[Visite a aplicação no ar](https://weather-app-umber-phi-28.vercel.app/)
+
 ## 🚀 Pré-requisitos
 
 - Node.js 16.10.0
