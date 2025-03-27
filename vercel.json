@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "angular.json",
+      "use": "@vercel/angular",
+      "config": {
+        "buildCommand": "npm run build:vercel"
+      }
+    }
+  ],
+  "rewrites": [{ "source": "**", "destination": "/index.html" }]
+}
