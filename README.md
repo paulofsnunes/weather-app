@@ -1,6 +1,6 @@
 # 🌤️ Weather App - Angular
 
-Aplicação de previsão do tempo desenvolvida com Angular 14 e Node.js 16.10.0, consumindo a API WeatherAPI.com.
+Aplicação de previsão do tempo desenvolvida com Angular 14 e Node.js 16.10.0, consumindo as API's WeatherAPI.com e LocationIQ.
 
 ## 🚀 Pré-requisitos
 
